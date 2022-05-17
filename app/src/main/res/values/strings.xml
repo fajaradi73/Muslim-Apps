@@ -1,0 +1,20 @@
+<resources>
+    <string name="app_name">Muslim Apps</string>
+    <string name="image_masjid">image masjid</string>
+    <string name="muslim_apps">Muslim Apps</string>
+    <string name="yes">Iya</string>
+    <string name="no">Tidak</string>
+    <string name="ok">OK</string>
+    <string name="no_data">Tidak Ada Data</string>
+    <string name="close">Tutup</string>
+    <string name="no_internet">Tidak Ada Koneksi Internet</string>
+    <string name="body_internet">Anda harus mengaktifkan Data Seluler atau wifi untuk mengakses ini. Tekan OK untuk mengaktifkan internet</string>
+    <string name="message_clear_cache">Sukses membersihkan cache</string>
+    <string name="al_quran">Al-Quran</string>
+    <string name="masjid_terdekat">Masjid Terdekat</string>
+    <string name="jadwal_sholat">Jadwal Sholat</string>
+    <string name="kumpulan_doa_doa">Kumpulan Doa-Doa</string>
+    <string name="niat_sholat">Niat Sholat</string>
+    <string name="bacaan_sholat">Bacaan Sholat</string>
+    <string name="ayat_kursi">Ayat Kursi</string>
+</resources>
