@@ -5,8 +5,12 @@
       <map>
         <entry key="..\:/Documents/fajarproject/MuslimApps/app/src/main/res/drawable/bg_circle.xml" value="0.14" />
         <entry key="..\:/Documents/fajarproject/MuslimApps/app/src/main/res/drawable/onboarding_button.xml" value="0.138" />
+        <entry key="..\:/Documents/fajarproject/MuslimApps/app/src/main/res/layout/activity_al_quran.xml" value="0.1952991452991453" />
         <entry key="..\:/Documents/fajarproject/MuslimApps/app/src/main/res/layout/activity_main.xml" value="0.25" />
         <entry key="..\:/Documents/fajarproject/MuslimApps/app/src/main/res/layout/activity_splash_screen.xml" value="0.165" />
+        <entry key="..\:/Documents/fajarproject/MuslimApps/app/src/main/res/layout/activity_surah.xml" value="0.1952991452991453" />
+        <entry key="..\:/Documents/fajarproject/MuslimApps/app/src/main/res/layout/adapter_ayat.xml" value="0.375" />
+        <entry key="..\:/Documents/fajarproject/MuslimApps/app/src/main/res/layout/adapter_surah.xml" value="0.335" />
         <entry key="..\:/Documents/fajarproject/MuslimApps/app/src/main/res/layout/dialog_no_internet.xml" value="0.23697916666666666" />
         <entry key="..\:/Documents/fajarproject/MuslimApps/app/src/main/res/layout/fragment_jadwal_sholat.xml" value="0.23802083333333332" />
         <entry key="..\:/Documents/fajarproject/MuslimApps/app/src/main/res/layout/layout_menu.xml" value="0.375" />

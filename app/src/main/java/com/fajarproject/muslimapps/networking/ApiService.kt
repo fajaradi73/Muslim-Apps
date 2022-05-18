@@ -1,6 +1,8 @@
 package com.fajarproject.muslimapps.networking
 
+import com.fajarproject.muslimapps.util.Util
 import retrofit2.Retrofit
+import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory
 import retrofit2.converter.gson.GsonConverterFactory
 
 
@@ -12,10 +14,12 @@ class ApiService {
 
     companion object {
         private const val BASE_URL = "https://api.npoint.io/"
-        fun getQuran(): ApiInterface {
+        fun create(): ApiInterface {
             val retrofit = Retrofit.Builder()
-                .baseUrl(BASE_URL)
+                .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
                 .addConverterFactory(GsonConverterFactory.create())
+                .client(Util.getOkHttp())
+                .baseUrl(BASE_URL)
                 .build()
             return retrofit.create(ApiInterface::class.java)
         }

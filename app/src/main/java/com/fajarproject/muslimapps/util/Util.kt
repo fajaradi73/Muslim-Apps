@@ -95,7 +95,7 @@ object Util {
     }
 
     fun hideLoading() {
-        if (dialog != null && dialog?.isShowing != true) {
+        if (dialog != null && dialog?.isShowing == true) {
             dialog?.dismiss()
             dialog?.setContentView(R.layout.progress)
         }

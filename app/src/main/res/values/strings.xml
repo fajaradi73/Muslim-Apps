@@ -17,4 +17,7 @@
     <string name="niat_sholat">Niat Sholat</string>
     <string name="bacaan_sholat">Bacaan Sholat</string>
     <string name="ayat_kursi">Ayat Kursi</string>
+    <string name="stop">Stop</string>
+    <string name="play">Play</string>
+    <string name="keterangan">Keterangan</string>
 </resources>

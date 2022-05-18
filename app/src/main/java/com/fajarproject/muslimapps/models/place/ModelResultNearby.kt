@@ -8,5 +8,5 @@ import com.google.gson.annotations.SerializedName
 
 data class ModelResultNearby(
     @SerializedName("result")
-    var modelResults : List<ModelResults>
+    var modelResults : MutableList<ModelResults>
 )

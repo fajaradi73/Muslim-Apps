@@ -4,6 +4,7 @@ import com.fajarproject.muslimapps.models.alquran.ModelAyat
 import retrofit2.http.GET
 import com.fajarproject.muslimapps.models.alquran.ModelSurah
 import com.fajarproject.muslimapps.models.place.ModelResultNearby
+import io.reactivex.Observable
 import retrofit2.Call
 import retrofit2.http.Path
 import retrofit2.http.Query
@@ -16,12 +17,12 @@ import java.util.ArrayList
 
 interface ApiInterface {
     @GET("/99c279bb173a6e28359c/data")
-    fun getListSurah(): Call<ArrayList<ModelSurah>>
+    fun getListSurah(): Observable<MutableList<ModelSurah>>
 
     @GET("/99c279bb173a6e28359c/surat/{nomor}")
     fun getDetailSurah(
         @Path("nomor") nomor: String
-    ): Call<ArrayList<ModelAyat>>
+    ): Observable<MutableList<ModelAyat>>
 
     @GET("place/nearbysearch/json")
     fun getDataResult(
@@ -29,5 +30,5 @@ interface ApiInterface {
         @Query("keyword") keyword: String,
         @Query("location") location: String,
         @Query("rankby") rankby: String
-    ): Call<ModelResultNearby>
+    ): Observable<ModelResultNearby>
 }
