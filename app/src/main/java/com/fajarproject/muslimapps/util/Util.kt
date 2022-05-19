@@ -130,6 +130,7 @@ object Util {
         }
     }
 
+    @SuppressLint("MissingPermission")
     @Suppress("DEPRECATION")
     fun isInternetAvailable(context: Context): Boolean {
         var result = false
