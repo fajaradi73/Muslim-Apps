@@ -1,14 +1,15 @@
 package com.fajarproject.muslimapps.networking
 
+import com.fajarproject.muslimapps.models.sholat.DaftarKota
 import com.fajarproject.muslimapps.models.alquran.ModelAyat
 import retrofit2.http.GET
 import com.fajarproject.muslimapps.models.alquran.ModelSurah
 import com.fajarproject.muslimapps.models.place.ModelResultNearby
+import com.fajarproject.muslimapps.models.sholat.ModelKota
+import com.fajarproject.muslimapps.models.sholat.ModelSholat
 import io.reactivex.Observable
-import retrofit2.Call
 import retrofit2.http.Path
 import retrofit2.http.Query
-import java.util.ArrayList
 
 
 /**
@@ -31,4 +32,16 @@ interface ApiInterface {
         @Query("location") location: String,
         @Query("rankby") rankby: String
     ): Observable<ModelResultNearby>
+
+    @GET("sholat/kota/semua")
+    fun getListKota(): Observable<MutableList<DaftarKota>>
+
+    @GET("sholat/jadwal/{idkota}/{tahun}/{bulan}/{tanggal}")
+    fun getJadwalSholat(
+        @Path("idkota") idKota: String,
+        @Path("tahun") tahun : String,
+        @Path("bulan") bulan : String,
+        @Path("tanggal") tanggal : String
+    ): Observable<ModelSholat>
+
 }

@@ -689,6 +689,7 @@ object Util {
     fun pxToDp(px: Int): Int {
         return (px / Resources.getSystem().displayMetrics.density).toInt()
     }
+
     fun bitmapDescriptorFromVector(context: Context?, vectorResId: Int): BitmapDescriptor? {
         val background: Drawable? = ContextCompat.getDrawable(context!!, vectorResId)
         background?.setBounds(0, 0, background.intrinsicWidth, background.intrinsicHeight)
@@ -700,5 +701,25 @@ object Util {
         val canvas = Canvas(bitmap!!)
         background.draw(canvas)
         return BitmapDescriptorFactory.fromBitmap(bitmap)
+    }
+
+    fun convertLongIntoDate(data: Long?, formatDate: String?, isEmpty: Boolean): String? {
+        return if (data != null && data != 0L) {
+            SimpleDateFormat(formatDate, Locale.getDefault()).format(Date(data))
+        } else {
+            if (isEmpty) {
+                ""
+            } else {
+                null
+            }
+        }
+    }
+
+    fun convertLongIntoDateStrip(data: Long?, formatDate: String?): String? {
+        return if (data != null && data != 0L) {
+            SimpleDateFormat(formatDate, Locale.getDefault()).format(Date(data))
+        } else {
+            "-"
+        }
     }
 }

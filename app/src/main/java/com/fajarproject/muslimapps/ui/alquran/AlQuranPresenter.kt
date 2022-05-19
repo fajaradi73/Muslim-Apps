@@ -12,7 +12,7 @@ import io.reactivex.schedulers.Schedulers
  */
 
 class AlQuranPresenter(var activity: Activity, var view: AlQuranView) {
-    private val api = ApiService.create()
+    private val api = ApiService.quran()
     private val subscriptions = CompositeDisposable()
     fun getQuran() {
         view.showLoading()

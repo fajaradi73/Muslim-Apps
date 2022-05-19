@@ -3,20 +3,20 @@ package com.fajarproject.muslimapps.ui.home
 import android.annotation.SuppressLint
 import android.content.Intent
 import android.content.pm.PackageManager
-import android.location.Geocoder
 import android.os.Bundle
 import android.text.format.DateFormat
 import androidx.appcompat.app.AppCompatActivity
 import com.fajarproject.muslimapps.databinding.ActivityMainBinding
 import com.fajarproject.muslimapps.ui.alquran.AlQuranActivity
+import com.fajarproject.muslimapps.ui.jadwalsholat.JadwalSholatActivity
 import com.fajarproject.muslimapps.ui.masjid.MasjidActivity
+import com.fajarproject.muslimapps.ui.widget.CurrentLocation
 import im.delight.android.location.SimpleLocation
-import java.io.IOException
 import java.util.*
 
 class MainActivity : AppCompatActivity(), MainView {
 
-    private lateinit var mainBinding: ActivityMainBinding
+    lateinit var mainBinding: ActivityMainBinding
 
     private lateinit var presenter: MainPresenter
     private var strCurrentLatitude = 0.0
@@ -48,7 +48,7 @@ class MainActivity : AppCompatActivity(), MainView {
     @SuppressLint("SetTextI18n")
     override fun setUI() {
         setLocation()
-        setCurrentLocation()
+
         val dateNow = Calendar.getInstance().time
         strDate = DateFormat.format("EEEE", dateNow) as String
         strDateNow = DateFormat.format("d MMMM yyyy", dateNow) as String
@@ -60,13 +60,13 @@ class MainActivity : AppCompatActivity(), MainView {
 
     override fun setAction() {
         mainBinding.cvQuran.setOnClickListener {
-            startActivity(Intent(this,AlQuranActivity::class.java))
+            startActivity(Intent(this, AlQuranActivity::class.java))
         }
         mainBinding.cvMasjid.setOnClickListener {
-            startActivity(Intent(this,MasjidActivity::class.java))
+            startActivity(Intent(this, MasjidActivity::class.java))
         }
         mainBinding.cvJadwal.setOnClickListener {
-
+            startActivity(Intent(this, JadwalSholatActivity::class.java))
         }
         mainBinding.cvDoa.setOnClickListener {
 
@@ -94,19 +94,7 @@ class MainActivity : AppCompatActivity(), MainView {
 
         //set location lat long
         strCurrentLatLong = "$strCurrentLatitude,$strCurrentLongitude"
-    }
-
-    override fun setCurrentLocation() {
-        val geocoder = Geocoder(this, Locale.getDefault())
-        try {
-            val addressList = geocoder.getFromLocation(strCurrentLatitude, strCurrentLongitude, 1)
-            if (addressList != null && addressList.size > 0) {
-                val strCurrentLocation = addressList[0].locality
-                mainBinding.tvLocation.text = strCurrentLocation
-            }
-        } catch (e: IOException) {
-            e.printStackTrace()
-        }
+        CurrentLocation(this, strCurrentLatitude, strCurrentLongitude).execute()
     }
 
     override fun onRequestPermissionsResult(
@@ -130,5 +118,7 @@ class MainActivity : AppCompatActivity(), MainView {
         if (resultCode == RESULT_OK && requestCode == 100) {
             setUI()
         }
+
     }
+
 }

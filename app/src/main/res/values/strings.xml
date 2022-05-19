@@ -22,4 +22,13 @@
     <string name="keterangan">Keterangan</string>
     <string name="title_activity_masjid">MasjidActivity</string>
     <string name="button_back">Button Back</string>
+    <string name="subuh">Subuh</string>
+    <string name="zuhur">Dzuhur</string>
+    <string name="ashar">Ashar</string>
+    <string name="maghrib">Maghrib</string>
+    <string name="isya">Isya</string>
+    <string name="dummy_time">05:30 AM</string>
+    <string name="terbit">Terbit</string>
+    <string name="dhuha">Dhuha</string>
+    <string name="imsak">Imsak</string>
 </resources>

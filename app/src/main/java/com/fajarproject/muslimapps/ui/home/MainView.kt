@@ -9,6 +9,4 @@ interface MainView {
     fun setUI()
     fun setAction()
     fun setLocation()
-    fun setCurrentLocation()
-
 }
