@@ -9,6 +9,7 @@ import android.text.format.DateFormat
 import androidx.appcompat.app.AppCompatActivity
 import com.fajarproject.muslimapps.databinding.ActivityMainBinding
 import com.fajarproject.muslimapps.ui.alquran.AlQuranActivity
+import com.fajarproject.muslimapps.ui.masjid.MasjidActivity
 import im.delight.android.location.SimpleLocation
 import java.io.IOException
 import java.util.*
@@ -62,7 +63,7 @@ class MainActivity : AppCompatActivity(), MainView {
             startActivity(Intent(this,AlQuranActivity::class.java))
         }
         mainBinding.cvMasjid.setOnClickListener {
-
+            startActivity(Intent(this,MasjidActivity::class.java))
         }
         mainBinding.cvJadwal.setOnClickListener {
 

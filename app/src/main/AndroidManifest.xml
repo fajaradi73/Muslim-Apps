@@ -3,10 +3,10 @@
     xmlns:tools="http://schemas.android.com/tools"
     package="com.fajarproject.muslimapps">
 
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
-    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
-    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
     <uses-permission
         android:name="android.permission.INTERNET"
         android:required="true" />
@@ -23,6 +23,16 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MuslimApps"
         tools:targetApi="31">
+
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="${MAPS_API_KEY}" />
+
+        <activity
+            android:name=".ui.masjid.MasjidActivity"
+            android:exported="false"
+            android:label="@string/title_activity_masjid"
+            android:theme="@style/AppTheme.DarkStatusBar"  />
         <activity
             android:name=".ui.surah.SurahActivity"
             android:exported="false"

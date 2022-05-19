@@ -7,10 +7,7 @@ import android.app.Dialog
 import android.content.Context
 import android.content.Intent
 import android.content.res.Resources
-import android.graphics.BlendMode
-import android.graphics.BlendModeColorFilter
-import android.graphics.Color
-import android.graphics.PorterDuff
+import android.graphics.*
 import android.graphics.drawable.ColorDrawable
 import android.graphics.drawable.Drawable
 import android.net.ConnectivityManager
@@ -34,9 +31,12 @@ import android.widget.Toast
 import androidx.annotation.NonNull
 import androidx.appcompat.app.AlertDialog
 import androidx.cardview.widget.CardView
+import androidx.core.content.ContextCompat
 import androidx.swiperefreshlayout.widget.CircularProgressDrawable
 import com.fajarproject.muslimapps.R
 import com.fajarproject.muslimapps.ui.widget.DialogListener
+import com.google.android.gms.maps.model.BitmapDescriptor
+import com.google.android.gms.maps.model.BitmapDescriptorFactory
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import java.io.File
@@ -61,7 +61,7 @@ object Util {
     fun getOkHttp(): OkHttpClient {
         val interceptor =
             HttpLoggingInterceptor()
-//        interceptor.level = HttpLoggingInterceptor.Level.BODY
+        interceptor.level = HttpLoggingInterceptor.Level.BODY
 
         return OkHttpClient.Builder()
             .connectTimeout(60, TimeUnit.SECONDS)
@@ -687,5 +687,17 @@ object Util {
 
     fun pxToDp(px: Int): Int {
         return (px / Resources.getSystem().displayMetrics.density).toInt()
+    }
+    fun bitmapDescriptorFromVector(context: Context?, vectorResId: Int): BitmapDescriptor? {
+        val background: Drawable? = ContextCompat.getDrawable(context!!, vectorResId)
+        background?.setBounds(0, 0, background.intrinsicWidth, background.intrinsicHeight)
+        val bitmap: Bitmap? = Bitmap.createBitmap(
+            background?.intrinsicWidth!!,
+            background.intrinsicHeight,
+            Bitmap.Config.ARGB_8888
+        )
+        val canvas = Canvas(bitmap!!)
+        background.draw(canvas)
+        return BitmapDescriptorFactory.fromBitmap(bitmap)
     }
 }

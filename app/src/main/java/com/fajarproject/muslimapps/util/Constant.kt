@@ -6,4 +6,6 @@ package com.fajarproject.muslimapps.util
 
 object Constant {
     const val DetailSurah = "Detail Surah"
+    const val BASE_URL_MAPS = "https://maps.googleapis.com/maps/api/"
+    const val BASE_URL = "https://api.npoint.io/"
 }

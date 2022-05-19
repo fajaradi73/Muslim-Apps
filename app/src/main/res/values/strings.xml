@@ -20,4 +20,6 @@
     <string name="stop">Stop</string>
     <string name="play">Play</string>
     <string name="keterangan">Keterangan</string>
+    <string name="title_activity_masjid">MasjidActivity</string>
+    <string name="button_back">Button Back</string>
 </resources>

@@ -1,6 +1,9 @@
 package com.fajarproject.muslimapps.networking
 
+import com.fajarproject.muslimapps.util.Constant
+import com.fajarproject.muslimapps.util.Util
 import retrofit2.Retrofit
+import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory
 import retrofit2.converter.gson.GsonConverterFactory
 
 
@@ -11,11 +14,12 @@ import retrofit2.converter.gson.GsonConverterFactory
 class ApiMaps {
 
     companion object {
-        private const val BASE_URL = "https://maps.googleapis.com/maps/api/"
-        fun getMaps(): ApiInterface {
+        fun create(): ApiInterface {
             val retrofit = Retrofit.Builder()
-                .baseUrl(BASE_URL)
+                .baseUrl(Constant.BASE_URL_MAPS)
+                .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
                 .addConverterFactory(GsonConverterFactory.create())
+                .client(Util.getOkHttp())
                 .build()
             return retrofit.create(ApiInterface::class.java)
         }

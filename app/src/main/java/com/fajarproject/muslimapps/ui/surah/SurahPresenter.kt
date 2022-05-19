@@ -21,6 +21,7 @@ class SurahPresenter(var activity: Activity, var view: SurahView) {
             .subscribe({ data: MutableList<ModelAyat> ->
                 view.showDataSuccess(data)
             }, { error ->
+                view.hideLoading()
                 view.showDataFailed(error?.message ?: "")
             }, {
                 view.hideLoading()
