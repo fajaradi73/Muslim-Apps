@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "521339953686",
+    "project_id": "muslim-apps-c843c",
+    "storage_bucket": "muslim-apps-c843c.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:521339953686:android:f343cab135b5da192a0b37",
+        "android_client_info": {
+          "package_name": "com.fajarproject.muslimapps"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "521339953686-cuadobql3p2jad46f7f6ig8t6ilqtmlv.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAq74caUYFdDb8aBYsixm3gdByutW7RSTc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "521339953686-cuadobql3p2jad46f7f6ig8t6ilqtmlv.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

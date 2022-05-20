@@ -8,8 +8,11 @@ import android.text.format.DateFormat
 import androidx.appcompat.app.AppCompatActivity
 import com.fajarproject.muslimapps.databinding.ActivityMainBinding
 import com.fajarproject.muslimapps.ui.alquran.AlQuranActivity
+import com.fajarproject.muslimapps.ui.ayatKursi.AyatKursiActivity
+import com.fajarproject.muslimapps.ui.bacaanSholat.BacaanSholatActivity
 import com.fajarproject.muslimapps.ui.jadwalsholat.JadwalSholatActivity
 import com.fajarproject.muslimapps.ui.masjid.MasjidActivity
+import com.fajarproject.muslimapps.ui.niatSholat.NiatSholatActivity
 import com.fajarproject.muslimapps.ui.widget.CurrentLocation
 import im.delight.android.location.SimpleLocation
 import java.util.*
@@ -25,7 +28,6 @@ class MainActivity : AppCompatActivity(), MainView {
     private lateinit var strDate: String
     private lateinit var strDateNow: String
     private lateinit var simpleLocation: SimpleLocation
-
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -72,13 +74,13 @@ class MainActivity : AppCompatActivity(), MainView {
 
         }
         mainBinding.cvNiatSholat.setOnClickListener {
-
+            startActivity(Intent(this, NiatSholatActivity::class.java))
         }
         mainBinding.cvBacaanSholat.setOnClickListener {
-
+            startActivity(Intent(this, BacaanSholatActivity::class.java))
         }
         mainBinding.cvAyatQursy.setOnClickListener {
-
+            startActivity(Intent(this,AyatKursiActivity::class.java))
         }
     }
 

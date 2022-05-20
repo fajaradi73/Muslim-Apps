@@ -31,4 +31,11 @@
     <string name="terbit">Terbit</string>
     <string name="dhuha">Dhuha</string>
     <string name="imsak">Imsak</string>
+    <string name="niat_shalat_wajib">Niat Shalat Wajib</string>
+    <string name="bacaan_niat_shalat_wajib_5_waktu">Bacaan niat shalat wajib 5 waktu</string>
+    <string name="bacaan_shalat_dari_doa_iftitah_sampai_salam">Bacaan shalat dari doa Iftitah sampai Salam</string>
+    <string name="bacaan_ayat_kursi_dengan_tafsirnya">Bacaan Ayat Kursi dengan tafsirnya</string>
+    <string name="tafsir">Tafsir</string>
+    <string name="bismillah">بِسْمِ اللَّـهِ الرَّحْمَـٰنِ الرَّحِيمِ</string>
+    <string name="dengan_menyebut_nama_allah_yang_maha_pemurah_lagi_maha_penyayang">Dengan menyebut nama Allah Yang Maha Pemurah lagi Maha Penyayang</string>
 </resources>

@@ -21,11 +21,8 @@ class AlQuranActivity : AppCompatActivity(), AlQuranView {
         presenter = AlQuranPresenter(this, this)
         setToolbar()
         setUI()
-    }
-
-    override fun onResume() {
-        super.onResume()
         presenter.getQuran()
+
     }
 
     override fun setToolbar() {

@@ -722,4 +722,14 @@ object Util {
             "-"
         }
     }
+    fun setWindowFlag(activity: Activity, bits: Int, on: Boolean) {
+        val window = activity.window
+        val layoutParams = window.attributes
+        if (on) {
+            layoutParams.flags = layoutParams.flags or bits
+        } else {
+            layoutParams.flags = layoutParams.flags and bits.inv()
+        }
+        window.attributes = layoutParams
+    }
 }

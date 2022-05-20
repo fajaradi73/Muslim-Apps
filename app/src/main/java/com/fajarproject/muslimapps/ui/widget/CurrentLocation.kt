@@ -24,7 +24,7 @@ class CurrentLocation(
     override fun doInBackground(vararg params: Double?): String? {
         return try {
             val addressList = geocoder.getFromLocation(latitude, longitude, 1)
-            Log.v("DataKota","$addressList ")
+//            Log.v("DataKota","$addressList ")
             if (addressList != null && addressList.size > 0) {
                 addressList[0].locality
             } else {
