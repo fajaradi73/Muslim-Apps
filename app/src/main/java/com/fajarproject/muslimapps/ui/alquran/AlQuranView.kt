@@ -9,7 +9,6 @@ import com.fajarproject.muslimapps.models.alquran.ModelSurah
 interface AlQuranView {
     fun setToolbar()
     fun setUI()
-    fun setAction()
     fun showDataSuccess(list: MutableList<ModelSurah>)
     fun showDataFailed(message : String)
     fun showLoading()

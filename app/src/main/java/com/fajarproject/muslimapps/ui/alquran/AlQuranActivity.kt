@@ -21,8 +21,6 @@ class AlQuranActivity : AppCompatActivity(), AlQuranView {
         presenter = AlQuranPresenter(this, this)
         setToolbar()
         setUI()
-        presenter.getQuran()
-
     }
 
     override fun setToolbar() {
@@ -39,11 +37,7 @@ class AlQuranActivity : AppCompatActivity(), AlQuranView {
     }
 
     override fun setUI() {
-        setAction()
-    }
-
-    override fun setAction() {
-
+        presenter.getQuran()
     }
 
     override fun showDataSuccess(list: MutableList<ModelSurah>) {

@@ -14,8 +14,8 @@
         <item name="colorAccent">@color/colorAccent</item>
         <item name="windowActionBar">false</item>
         <item name="windowNoTitle">true</item>
-        <item name="colorPrimaryDark" >@android:color/transparent</item>
-        <item name="android:windowLightStatusBar" >true</item>
+        <item name="colorPrimaryDark">@android:color/transparent</item>
+        <item name="android:windowLightStatusBar">true</item>
         <item name="android:windowTranslucentStatus">true</item>
         <item name="android:windowTranslucentNavigation">true</item>
         <item name="android:windowDrawsSystemBarBackgrounds" tools:ignore="NewApi">true</item>
@@ -33,6 +33,7 @@
         <item name="android:textColorPrimary">@color/textColorPrimary</item>
         <item name="android:textColorSecondary">@color/textColorSecondary</item>
     </style>
+
     <style name="Toolbar.TitleText" parent="TextAppearance.Widget.AppCompat.Toolbar.Title">
         <item name="android:textSize">16sp</item>
         <item name="android:textStyle">bold</item>
@@ -42,22 +43,31 @@
     <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
 
     <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+
     <style name="ButtonClick" parent="Widget.AppCompat.Button">
         <item name="android:foreground">?android:attr/selectableItemBackground</item>
         <item name="android:clickable">true</item>
         <item name="android:focusable">true</item>
     </style>
+
     <style name="AppTheme.DarkStatusBar">
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorAccent">@color/colorPrimary</item>
         <item name="windowActionBar">false</item>
         <item name="windowNoTitle">true</item>
-        <item name="colorPrimaryDark" >@android:color/transparent</item>
-        <item name="android:windowLightStatusBar" >true</item>
+        <item name="colorPrimaryDark">@android:color/transparent</item>
+        <item name="android:windowLightStatusBar">true</item>
         <item name="android:windowTranslucentStatus">true</item>
         <!--        <item name="android:windowTranslucentNavigation">true</item>-->
         <!--<item name="android:windowFullscreen">true</item>-->
         <item name="android:windowDrawsSystemBarBackgrounds" tools:ignore="NewApi">true</item>
         <item name="android:statusBarColor" tools:ignore="NewApi">@android:color/transparent</item>
     </style>
+
+    <style name="SearchView">
+        <item name="android:editTextColor">@color/colorPrimary</item>
+        <item name="android:textColorHint">@color/colorPrimary</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
 </resources>

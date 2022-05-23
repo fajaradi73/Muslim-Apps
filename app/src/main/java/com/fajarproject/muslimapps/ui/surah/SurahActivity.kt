@@ -30,6 +30,7 @@ class SurahActivity : AppCompatActivity(), SurahView {
     private lateinit var strAyat: String
     private lateinit var strKeterangan: String
     private lateinit var strAudio: String
+    private val mediaPlayer = MediaPlayer()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -53,6 +54,14 @@ class SurahActivity : AppCompatActivity(), SurahView {
             onBackPressed()
         }
         return super.onOptionsItemSelected(item)
+    }
+
+    override fun onBackPressed() {
+        if (mediaPlayer.isPlaying){
+            mediaPlayer.stop()
+            mediaPlayer.reset()
+        }
+        super.onBackPressed()
     }
 
     @SuppressLint("SetTextI18n")
@@ -83,7 +92,6 @@ class SurahActivity : AppCompatActivity(), SurahView {
     }
 
     override fun setAction() {
-        val mediaPlayer = MediaPlayer()
         binding.fabPlay.setOnClickListener {
             try {
                 mediaPlayer.setAudioAttributes(

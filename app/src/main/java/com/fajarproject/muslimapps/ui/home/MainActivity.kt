@@ -10,6 +10,7 @@ import com.fajarproject.muslimapps.databinding.ActivityMainBinding
 import com.fajarproject.muslimapps.ui.alquran.AlQuranActivity
 import com.fajarproject.muslimapps.ui.ayatKursi.AyatKursiActivity
 import com.fajarproject.muslimapps.ui.bacaanSholat.BacaanSholatActivity
+import com.fajarproject.muslimapps.ui.doa.DoaActivity
 import com.fajarproject.muslimapps.ui.jadwalsholat.JadwalSholatActivity
 import com.fajarproject.muslimapps.ui.masjid.MasjidActivity
 import com.fajarproject.muslimapps.ui.niatSholat.NiatSholatActivity
@@ -71,7 +72,7 @@ class MainActivity : AppCompatActivity(), MainView {
             startActivity(Intent(this, JadwalSholatActivity::class.java))
         }
         mainBinding.cvDoa.setOnClickListener {
-
+            startActivity(Intent(this, DoaActivity::class.java))
         }
         mainBinding.cvNiatSholat.setOnClickListener {
             startActivity(Intent(this, NiatSholatActivity::class.java))
