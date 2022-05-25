@@ -14,6 +14,7 @@ import android.net.ConnectivityManager
 import android.net.NetworkCapabilities
 import android.net.Uri
 import android.os.Build
+import android.speech.RecognizerIntent
 import android.text.SpannableString
 import android.text.SpannableStringBuilder
 import android.text.Spanned
@@ -28,6 +29,8 @@ import android.view.WindowManager
 import android.widget.Button
 import android.widget.TextView
 import android.widget.Toast
+import androidx.activity.result.ActivityResultLauncher
+import androidx.activity.result.contract.ActivityResultContracts
 import androidx.annotation.NonNull
 import androidx.appcompat.app.AlertDialog
 import androidx.cardview.widget.CardView
@@ -731,5 +734,19 @@ object Util {
             layoutParams.flags = layoutParams.flags and bits.inv()
         }
         window.attributes = layoutParams
+    }
+
+    fun onVoiceClicked(result: ActivityResultLauncher<Intent>) {
+        val intent = Intent(RecognizerIntent.ACTION_RECOGNIZE_SPEECH)
+        intent.putExtra(
+            RecognizerIntent.EXTRA_LANGUAGE_MODEL,
+            RecognizerIntent.LANGUAGE_MODEL_WEB_SEARCH
+        ) // setting recognition model, optimized for short phrases – search queries
+
+        intent.putExtra(
+            RecognizerIntent.EXTRA_MAX_RESULTS,
+            1
+        ) // quantity of results we want to receive
+        result.launch(intent)
     }
 }

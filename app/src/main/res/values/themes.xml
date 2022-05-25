@@ -12,5 +12,18 @@
         <!-- Status bar color. -->
         <item name="android:statusBarColor" >?attr/colorPrimaryVariant</item>
         <!-- Customize your theme here. -->
+        <item name="toolbarStyle">@style/Widget.MyTheme.Toolbar</item>
+    </style>
+    <style name="Widget.MyTheme.Toolbar" parent="Widget.MaterialComponents.Toolbar">
+        <!-- Title text color -->
+        <item name="titleTextColor">@color/white</item>
+        <!-- ThemeOverlay -->
+        <item name="materialThemeOverlay">@style/MyThemeOverlay_Toolbar</item>
+    </style>
+
+    <style name="MyThemeOverlay_Toolbar" parent="ThemeOverlay.MaterialComponents.Toolbar.Primary">
+        <item name="colorControlNormal">@color/white</item>
+        <!-- color used by navigation icon and overflow icon -->
+        <item name="colorOnPrimary">@color/white</item>
     </style>
 </resources>
